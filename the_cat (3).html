@@ -21,21 +21,26 @@ The Cat
 
 PAL 0
 51,204,120
-255,25,46
+255,3,20
 252,240,247
 NAME blueprint
 
 PAL 1
 51,204,120
-171,101,40
+255,255,121
 53,153,56
 NAME room2
 
 PAL 2
-193,193,193
-124,124,124
+216,216,216
+0,0,0
 255,255,255
 NAME caveroom
+
+PAL 3
+51,204,120
+95,195,255
+249,238,255
 
 ROOM 0
 i,i,i,i,i,i,i,b,b,b,b,b,i,i,i,i
@@ -62,7 +67,7 @@ PAL 0
 TUNE 3
 
 ROOM 1
-k,k,k,k,k,k,k,0,0,k,k,k,k,k,k,0
+k,k,k,k,k,k,k,0,0,k,k,k,k,k,k,k
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,j
 j,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 0,0,0,0,0,0,0,0,l,0,0,0,0,0,0,j
@@ -105,8 +110,31 @@ ROOM 2
 n,o,p,n,o,p,n,0,0,o,p,n,o,p,n,o
 EXT 7,15 1 7,0
 EXT 8,15 1 8,0
-END 5 1,1
+EXT 1,1 3 1,14
 PAL 2
+TUNE 3
+
+ROOM 3
+0,0,0,0,0,0,q,q,q,q,0,0,0,0,0,0
+0,0,0,0,q,q,q,q,q,q,q,q,q,0,0,0
+0,0,0,q,q,q,q,q,q,q,q,q,q,q,q,q
+0,0,0,q,q,q,q,q,q,q,q,q,q,q,q,q
+0,0,0,0,q,q,q,q,q,q,q,q,q,0,0,0
+0,0,0,0,0,q,q,q,q,q,q,q,q,0,0,0
+0,0,0,0,0,0,q,q,q,q,q,q,q,0,0,0
+0,0,0,0,0,0,0,q,q,q,q,q,q,q,0,0
+0,0,0,0,0,0,0,0,q,q,q,q,0,0,0,0
+0,0,0,0,0,0,0,0,q,q,q,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+END 5 14,4
+END 6 13,5
+PAL 3
+TUNE 3
 
 TIL a
 11111111
@@ -306,7 +334,57 @@ TIL q
 11111111
 11111111
 11111111
-WAL true
+WAL false
+
+TIL r
+11111111
+10110110
+10000000
+11100000
+10000000
+11000000
+10000000
+10000000
+
+TIL s
+10000000
+11000000
+11000000
+10000000
+11100000
+11100000
+11100000
+10000000
+
+TIL t
+10000000
+10000000
+11000000
+11000000
+10000000
+10000000
+10000000
+10000000
+
+TIL u
+11111111
+00001110
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+
+TIL v
+11111111
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
 
 SPR A
 00111100
@@ -326,7 +404,7 @@ SPR A
 10111100
 00100100
 00000100
-POS 0 4,4
+POS 0 5,4
 
 SPR a
 00000000
@@ -505,7 +583,17 @@ SPR p
 11111111
 01111110
 00111100
-POS 1 15,0
+
+SPR q
+00000000
+00000000
+10001010
+10001110
+01001110
+00111110
+00111100
+00100100
+POS 3 13,4
 
 ITM 0
 00000000
@@ -563,11 +651,25 @@ Meow! Meow! (Who are you? I don't need your help.)
 
 ...But were you not just calling for help?
 
+
 Meow. (Well, yes. But I realized something.)
+
 
 What are you talking about? You're stuck in the rock!
 
-Meow..Meow. (Well..I got myself stuck here, it wouldn't be fair to drag someone else into a problem I made.)\
+
+Meow..Meow. (Well..I got myself stuck here, it wouldn't be fair to drag someone else into a problem I made.)
+
+
+That's crazy! You are stuck. You may be able to pull yourself out alone, but I'm here now. It would be crazy to think you are better off without anyone.
+
+
+
+Meow..Meow! (I know..But actually receiving help..It's scary. How can I trust a stranger!)
+
+
+*Fumbles around in the rocks until the cat is able to move freely* I'll tell you what, I live close and I've explored this area plenty of times. I want to show you something.
+Follow me through this hole in the ground to the west, it's worth it.
 
 """
 NAME cat dialog
@@ -589,8 +691,36 @@ Turning green always made me uncomfortable.
 NAME turninggreen dialog
 
 DLG 5
-The end
+"""
+How did you beat me out here??
+
+Meow (I'm a cat, I work mysteriously.)
+
+Isn't it beautiful out here? I come here to relax and be alone, I haven't shared this space with anyone before..
+
+Meow..Meow (It is beautiful..Thank you..For saving me I mean)
+
+It's no problem, sometimes, all you need is a shoulder to lean on.
+
+*The cat crawls onto your lap, content, and finally comfortable.
+"""
 NAME ending 1
+
+DLG 6
+"""
+How did you beat me out here??
+
+Meow (I'm a cat, I work mysteriously.)
+
+Isn't it beautiful out here? I come here to relax and be alone, I haven't shared this space with anyone before..
+
+Meow..Meow (It is beautiful..Thank you..For saving me I mean)
+
+It's no problem, sometimes, all you need is a shoulder to lean on.
+
+*The cat crawls onto your lap, content, and finally comfortable.
+"""
+NAME ending 2
 
 VAR a
 42
